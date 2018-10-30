@@ -8,13 +8,13 @@ namespace DENS
 {
 	using std::vector;
 
-	class abm : public rk4
+	class abm : public Function
 	{
 	public:
 		//Constructors
 		abm();
 		// abm(float xIn, float yIn, float h);
-		abm(float xIn, float yIn, float h, int xTerminal);
+		abm(float xIn, float yIn, float h, float xTerminal);
 		// abm(float xIn, float yIn, float h, int xTerminal, int p); 
 		//Functions
 		virtual void equals(float xIn, float yIn);

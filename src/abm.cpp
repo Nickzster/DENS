@@ -22,7 +22,7 @@ namespace DENS
 	// 	this->h = h;
 	// 	this->p = p;
 	// }
-	abm::abm(float xIn, float yIn, float h, int xTerminal)
+	abm::abm(float xIn, float yIn, float h, float xTerminal)
 	{
 		this->xIn = xIn;
 		this->yIn = yIn;
@@ -72,16 +72,14 @@ namespace DENS
 				if (initalize)
 				{
 					rk4 r(this->xIn, this->yIn, this->h, this->xTerminal);
+					r.setFunction(this->function);
 					r.method(4);
 					initalize = false;
-					//Since ABM is derived from RK4, we have to put the RK4 values into the ABM method. 
-					//rather have a 4-lined for-loop versus an entire copy of the RK4 function in ABM.
+					//Since RK4 initalizes ABM, we have to put the RK4 values into the ABM method. 
 					for (int i = 0; i < 4; i++)
 					{
 						this->xvalues.push_back(r.getX(i));
-						cout << "DEBUG(X): " << r.getX(i) << endl;
 						this->yvalues.push_back(r.getY(i));
-						cout << "DEBUG(Y): " << r.getY(i) << endl;
 					}
 				}
 				//Step one: Fill in y'

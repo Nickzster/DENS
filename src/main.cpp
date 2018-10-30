@@ -17,11 +17,16 @@ int main(int argc, char* argv[])
     {
         if(string(argv[1]) == "--help")
         {
-            cout << "Options:" << endl;
-            cout << "--about" << endl;
-            cout << "./DENS <MethodName> <xInital> <yInital> <stepSize> <xTerminal>" << endl;
-            cout << "DENS will then prompt for f(x,y) to evaluate." << endl;
-            cout << "Must be first order in order to successfully evaluate." << endl;
+            cout << "OPTIONS=========================================" << endl << endl;
+        
+            cout << "--about" << "\t" << "Displays ABOUT message." << endl << endl;
+            cout << "HOW TO USE: " << endl;
+            cout << "ENTER PARAMETERS LIKE THIS:" << endl;
+            cout << "./DENS <MethodName> <x-inital> <y-inital> <stepSize> <x-terminal>" << endl << endl;
+            cout << "**NOTE: xInital, yInital, step-size, and x-terminal are floating values.**" << endl << endl;
+            cout << "DENS will then prompt for y' to evaluate." << endl;
+            cout << "Must be first order in order to successfully evaluate." << endl << endl;
+            cout << "================================================" << endl;
         }
         else if(string(argv[1]) == "--about")
         {
@@ -29,12 +34,12 @@ int main(int argc, char* argv[])
         }
         else
         {
-            cout << "Invalid argument count" << endl;
+            cout << "Invalid argument was issued." << endl;
         }
         return 0;
     }
     string function;
-    cout << "Enter a mathematical function to evaluate: ";
+    cout << "y' = ";
     cin >> function;
 
     string argument(argv[1]);

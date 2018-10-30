@@ -1,2 +1,4 @@
 *.xls
 *.out
+*.o
+src/*.o

@@ -15,7 +15,22 @@ int main(int argc, char* argv[])
     //DENS <MethodName> <xInital> <yInital> <stepSize> <xTerminal> <functionToEvaluate>
     if(argc != 6)
     {
-        cout << "Invalid argument count" << endl;
+        if(string(argv[1]) == "--help")
+        {
+            cout << "Options:" << endl;
+            cout << "--about" << endl;
+            cout << "./DENS <MethodName> <xInital> <yInital> <stepSize> <xTerminal>" << endl;
+            cout << "DENS will then prompt for f(x,y) to evaluate." << endl;
+            cout << "Must be first order in order to successfully evaluate." << endl;
+        }
+        else if(string(argv[1]) == "--about")
+        {
+            cout << "Differential Equations Numerical Solver: By Nick Zimmermann" << endl;
+        }
+        else
+        {
+            cout << "Invalid argument count" << endl;
+        }
         return 0;
     }
     string function;
@@ -27,6 +42,7 @@ int main(int argc, char* argv[])
     float yInital = stof(string(argv[3]), nullptr);
     float stepSize = stof(string(argv[4]), nullptr);
     float xTerminal = stof(string(argv[5]), nullptr);
+
     if(argument == "em")
     {
         em e(xInital, yInital, stepSize, xTerminal, false);
@@ -54,6 +70,10 @@ int main(int argc, char* argv[])
         a.setFunction(function);
         a.method();
         a.printValues();
+    }
+    else
+    {
+        cout << "Invalid argument was passed." << endl;
     }
     return 0;
 }

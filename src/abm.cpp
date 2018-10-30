@@ -78,8 +78,10 @@ namespace DENS
 					//rather have a 4-lined for-loop versus an entire copy of the RK4 function in ABM.
 					for (int i = 0; i < 4; i++)
 					{
-						abm::xvalues.push_back(r.getX(i));
-						abm::yvalues.push_back(r.getY(i));
+						this->xvalues.push_back(r.getX(i));
+						cout << "DEBUG(X): " << r.getX(i) << endl;
+						this->yvalues.push_back(r.getY(i));
+						cout << "DEBUG(Y): " << r.getY(i) << endl;
 					}
 				}
 				//Step one: Fill in y'

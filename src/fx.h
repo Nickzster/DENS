@@ -46,11 +46,9 @@ namespace DENS
 		Function(float xIn, float yIn); */
 		//Functions
 		void setFunction(string); //Sets the function to be evaluated.
-		float Eval(float xIn, float yIn); //Evauluates a specific problem that the user wants to solve.
-		float Eval(float xIn, float yIn, int p); //Uses a switch-case to evaluate any of the problems in a list that the user defines.
+		float Eval(float xIn, float yIn); //Evauluates the stored function.
 		///Problems: Stores the functions to be evaluated.
-		float Problems(float xIn, float yIn); //Stores 1 problem
-		float Problems(float xIn, float yIn, int p); //Stores a switch-case list of problems.
+		float Problems(float xIn, float yIn); //Stores the function to be evaluated
 	
 
 		//getX and getY: gets the output for X and y.

@@ -34,19 +34,6 @@ namespace DENS
 	/* Scroll down to the bottom of this file to see
 	a list of functions to try out. */
 	///Problems: Evalutes the functions with the class values.
-	float Function::Problems(float xIn, float yIn, int p)
-	{
-		switch (p)
-		{
-			case 0:
-				return ((2 * xIn) - (3 * yIn)) + 1;
-			break;
-			
-			default:
-				cout << "Invalid p" << endl;
-			break;
-		}
-	}
 	float Function::Problems(float xIn, float yIn)
 	{
 		typedef float T;
@@ -73,10 +60,6 @@ namespace DENS
 	void Function::setFunction(string fxn) //Sets the function to be evaluated.
 	{
 		this->function = fxn;
-	}
-	float Function::Eval(float xIn, float yIn, int p)
-	{
-		return Problems(xIn, yIn, p);
 	}
 	float Function::Eval(float xIn, float yIn)
 	{

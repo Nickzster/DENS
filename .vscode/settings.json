@@ -5,7 +5,8 @@
         "xlocale": "cpp",
         "iostream": "cpp",
         "ostream": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "vector": "cpp"
     },
     "git.ignoreLimitWarning": true
 }
